@@ -1,0 +1,139 @@
+@keyframes slowShow {
+  from {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.25;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  75% {
+    opacity: 0.75;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.ce-toolbar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  opacity: 0;
+  animation-name: slowShow;
+  animation-duration: 300ms;
+  transition: ease-in 100ms;
+  will-change: display;
+  z-index: 4;
+  display: none;
+  /**
+   * Block actions Zone
+   * -------------------------
+   */
+}
+
+.ce-toolbar--opened {
+  display: block;
+}
+
+.ce-toolbar__content {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  position: relative;
+}
+
+.ce-toolbar__plus {
+  @apply --toolbox-button;
+  flex-shrink: 0;
+  max-height: 30px;
+}
+
+.ce-toolbar__plus-shortcut {
+  opacity: 0.6;
+  word-spacing: -2px;
+  margin-top: 5px;
+}
+
+@media (--mobile) {
+  .ce-toolbar__plus {
+    @apply --overlay-pane;
+    position: static;
+  }
+}
+.ce-toolbar__drag {
+  width: 4px;
+  display: block;
+}
+
+.ce-toolbar__drag__handle {
+  width: 3px;
+  max-width: 3px;
+  min-width: 3px;
+  height: 100%;
+  background-color: rgba(55, 53, 47, 0.16);
+  cursor: col-resize;
+  display: block;
+  opacity: 0;
+  transition: opacity 800ms ease;
+  will-change: opacity, height;
+}
+
+.ce-toolbar__actions {
+  position: absolute;
+  right: 100%;
+  opacity: 0;
+  display: flex;
+  padding-right: 5px;
+  will-change: opacity;
+  transition: ease-in 100ms;
+}
+
+.ce-toolbar__actions--opened {
+  opacity: 1;
+}
+
+@media (--mobile) {
+  .ce-toolbar__actions {
+    right: auto;
+  }
+}
+.ce-toolbar__settings-btn {
+  @apply --toolbox-button;
+  margin-left: 3px;
+  cursor: pointer;
+  user-select: none;
+  max-height: 30px;
+}
+
+@media (--not-mobile) {
+  .ce-toolbar__settings-btn {
+    width: 24px;
+  }
+}
+.ce-toolbar__settings-btn--hidden {
+  display: none;
+}
+
+@media (--mobile) {
+  .ce-toolbar__settings-btn {
+    @apply --overlay-pane;
+    position: static;
+  }
+}
+.ce-toolbar__plus svg, .ce-toolbar__settings-btn svg {
+  width: 24px;
+  height: 24px;
+}
+
+/**
+ * Styles for Narrow mode
+ */
+@media (--not-mobile) {
+  .codex-editor--narrow .ce-toolbar__plus {
+    left: 5px;
+  }
+}
+
+
+/*# sourceMappingURL=toolbar.css.map */

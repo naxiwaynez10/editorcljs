@@ -1,0 +1,70 @@
+.ce-conversion-toolbar {
+  @apply --overlay-pane;
+  opacity: 0;
+  visibility: hidden;
+  will-change: transform, opacity;
+  transition: transform 100ms ease, opacity 100ms ease;
+  transform: translateY(-8px);
+  left: -1px;
+  width: 150px;
+  margin-top: 5px;
+  box-sizing: content-box;
+}
+.ce-conversion-toolbar--showed {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+}
+.ce-conversion-toolbar [hidden] {
+  display: none !important;
+}
+.ce-conversion-toolbar__buttons {
+  display: flex;
+}
+.ce-conversion-toolbar__label {
+  color: var(--grayText);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.33px;
+  padding: 10px 10px 5px;
+  text-transform: uppercase;
+}
+
+.ce-conversion-tool {
+  display: flex;
+  padding: 5px 10px;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+  cursor: pointer;
+  align-items: center;
+}
+.ce-conversion-tool--hidden {
+  display: none;
+}
+.ce-conversion-tool--focused {
+  box-shadow: inset 0 0 0px 1px rgba(7, 161, 227, 0.08);
+  background: rgba(34, 186, 255, 0.08) !important;
+}
+.ce-conversion-tool--focused-animated {
+  animation-name: buttonClicked;
+  animation-duration: 250ms;
+}
+.ce-conversion-tool:hover {
+  background: var(--bg-light);
+}
+.ce-conversion-tool__icon {
+  @apply --tool-icon;
+}
+.ce-conversion-tool--last {
+  margin-right: 0 !important;
+}
+.ce-conversion-tool--active {
+  color: var(--color-active-icon) !important;
+}
+.ce-conversion-tool--active {
+  animation: bounceIn 0.75s 1;
+  animation-fill-mode: forwards;
+}
+
+/*# sourceMappingURL=conversion-toolbar.css.map */

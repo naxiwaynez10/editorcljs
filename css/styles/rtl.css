@@ -1,0 +1,62 @@
+.codex-editor.codex-editor--rtl {
+  direction: rtl;
+}
+.codex-editor.codex-editor--rtl .cdx-list {
+  padding-left: 0;
+  padding-right: 40px;
+}
+.codex-editor.codex-editor--rtl .ce-toolbar__plus {
+  right: calc(var(--toolbox-buttons-size) * -1);
+  left: auto;
+}
+.codex-editor.codex-editor--rtl .ce-toolbar__actions {
+  right: auto;
+  left: calc(var(--toolbox-buttons-size) * -1);
+}
+@media (--mobile) {
+  .codex-editor.codex-editor--rtl .ce-toolbar__actions {
+    margin-left: 0;
+    margin-right: auto;
+    padding-right: 0;
+    padding-left: 10px;
+  }
+}
+.codex-editor.codex-editor--rtl .ce-settings {
+  left: 5px;
+  right: auto;
+}
+.codex-editor.codex-editor--rtl .ce-settings::before {
+  right: auto;
+  left: 25px;
+}
+.codex-editor.codex-editor--rtl .ce-settings__button:not(:nth-child(3n+3)) {
+  margin-left: 3px;
+  margin-right: 0;
+}
+.codex-editor.codex-editor--rtl .ce-conversion-tool__icon {
+  margin-right: 0px;
+  margin-left: 10px;
+}
+.codex-editor.codex-editor--rtl .ce-inline-toolbar__dropdown {
+  border-right: 0px solid transparent;
+  border-left: 1px solid var(--color-gray-border);
+  margin: 0 -6px 0 6px;
+}
+.codex-editor.codex-editor--rtl .ce-inline-toolbar__dropdown .icon--toggler-down {
+  margin-left: 0px;
+  margin-right: 4px;
+}
+
+@media (--not-mobile) {
+  .codex-editor--narrow.codex-editor--rtl .ce-toolbar__plus {
+    left: 0px;
+    right: 5px;
+  }
+}
+@media (--not-mobile) {
+  .codex-editor--narrow.codex-editor--rtl .ce-toolbar__actions {
+    left: -5px;
+  }
+}
+
+/*# sourceMappingURL=rtl.css.map */

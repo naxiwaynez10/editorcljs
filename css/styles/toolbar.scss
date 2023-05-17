@@ -1,0 +1,142 @@
+@keyframes slowShow {
+  from {
+    opacity: 0;
+  }
+
+  25% {
+    opacity: .25;
+  }
+50% {
+  opacity: .5;
+}
+75% {
+  opacity: .75;
+}
+
+  to {
+    opacity: 1;
+  }
+}
+
+.ce-toolbar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  opacity: 0;
+  animation-name: slowShow;
+  animation-duration: 300ms;
+  transition: ease-in 100ms;
+  will-change: display;
+  z-index: 4;
+  display: none;
+
+  &--opened {
+    display: block;
+  }
+
+  &__content {
+    max-width: var(--content-width);
+    margin: 0 auto;
+    position: relative;
+  }
+
+  &__plus {
+    @apply --toolbox-button;
+    flex-shrink: 0;
+    max-height: 30px;
+
+    &-shortcut {
+      opacity: 0.6;
+      word-spacing: -2px;
+      margin-top: 5px;
+    }
+
+   
+
+    @media (--mobile){
+      @apply --overlay-pane;
+      position: static;
+    }
+  }
+    &__drag {
+
+      width: 4px;
+      display: block;
+
+      &__handle {
+        width: 3px;
+        max-width: 3px;
+        min-width: 3px;
+        height: 100%;
+        background-color: rgba(55, 53, 47, 0.16);
+        cursor: col-resize;
+        display: block;
+        // margin: auto;
+        opacity: 0;
+        transition: opacity 800ms ease;
+        will-change: opacity, height;  
+      }
+    }
+
+  /**
+   * Block actions Zone
+   * -------------------------
+   */
+  &__actions {
+    position: absolute;
+    right: 100%;
+    opacity: 0;
+    display: flex;
+    padding-right: 5px;
+    will-change: opacity;
+    transition: ease-in 100ms;
+
+    &--opened {
+      opacity: 1;
+    }
+
+    @media (--mobile){
+      right: auto;
+    }
+  }
+
+  &__settings-btn {
+    @apply --toolbox-button;
+
+    margin-left: 3px;
+    cursor: pointer;
+    user-select: none;
+    max-height: 30px;
+
+    @media (--not-mobile){
+      width: 24px;
+    }
+
+    &--hidden {
+      display: none;
+    }
+
+    @media (--mobile){
+      @apply --overlay-pane;
+      position: static;
+    }
+  }
+
+  &__plus,
+  &__settings-btn {
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
+}
+
+/**
+ * Styles for Narrow mode
+ */
+.codex-editor--narrow .ce-toolbar__plus {
+  @media (--not-mobile) {
+    left: 5px;
+  }
+}

@@ -1,0 +1,21 @@
+blockquote {
+    border-left: 5px solid #a69c9c;
+    background: ghostwhite;
+    padding: 10px;
+    min-height: 50px
+}
+
+blockquote > div[data-placeholder]:empty::before {
+    content: attr(data-placeholder);
+}
+
+cite {
+    font-size: small;
+    font-style: italic;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+
+cite[data-placeholder]:empty::before {
+    content: attr(data-placeholder);
+}

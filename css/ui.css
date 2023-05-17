@@ -1,0 +1,144 @@
+@charset "UTF-8";
+/**
+* Editor wrapper
+*/
+.codex-editor {
+  position: relative;
+  box-sizing: border-box;
+  z-index: 1;
+  /**
+   * Styles for narrow holder
+   */
+}
+
+.codex-editor .hide {
+  display: none;
+}
+
+.codex-editor__redactor {
+  z-index: 4;
+  /**
+   * Workaround firefox bug: empty content editable elements has collapsed height
+   * https://bugzilla.mozilla.org/show_bug.cgi?id=1098151#c18
+   */
+}
+
+.codex-editor__redactor--hidden {
+  display: none;
+}
+
+.codex-editor__redactor [contenteditable]:empty::after {
+  content: "﻿";
+}
+
+@media (--not-mobile) {
+  .codex-editor--narrow .codex-editor__redactor {
+    margin-right: var(--narrow-mode-right-padding);
+  }
+}
+@media (--not-mobile) {
+  .codex-editor--narrow .codex-editor--rtl .codex-editor__redactor {
+    margin-left: var(--narrow-mode-right-padding);
+    margin-right: 0;
+  }
+}
+@media (--not-mobile) {
+  .codex-editor--narrow .ce-toolbar__actions {
+    right: -5px;
+  }
+}
+.codex-editor__loader {
+  position: relative;
+  height: 30vh;
+}
+
+.codex-editor__loader::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 30px;
+  height: 30px;
+  margin-top: -15px;
+  margin-left: -15px;
+  border-radius: 50%;
+  border: 2px solid var(--color-gray-border);
+  border-top-color: transparent;
+  box-sizing: border-box;
+  animation: editor-loader-spin 800ms infinite linear;
+  will-change: transform;
+}
+
+.codex-editor-copyable {
+  position: absolute;
+  height: 1px;
+  width: 1px;
+  top: -400%;
+  opacity: 0.001;
+}
+
+.codex-editor-overlay {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  z-index: 3;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.codex-editor-overlay__container {
+  position: relative;
+  pointer-events: auto;
+  z-index: 0;
+}
+
+.codex-editor-overlay__rectangle {
+  position: absolute;
+  pointer-events: none;
+  background-color: rgba(46, 170, 220, 0.2);
+  border: 1px solid transparent;
+}
+
+.codex-editor svg {
+  max-height: 100%;
+}
+
+.codex-editor path {
+  stroke: currentColor;
+}
+
+/**
+ * Set color for native selection
+ */
+::selection {
+  background-color: var(--inlineSelectionColor);
+}
+
+.codex-editor--toolbox-opened [contentEditable=true][data-placeholder]:focus::before {
+  opacity: 0 !important;
+}
+
+@keyframes editor-loader-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.ce-scroll-locked {
+  overflow: hidden;
+}
+
+.ce-scroll-locked--hard {
+  overflow: hidden;
+  top: calc(-1 * var(--window-scroll-offset));
+  position: fixed;
+  width: 100%;
+}
+
+
+
+/*# sourceMappingURL=ui.css.map */

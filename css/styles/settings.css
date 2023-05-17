@@ -1,0 +1,26 @@
+.ce-settings__button {
+  @apply --toolbar-button;
+  line-height: 32px;
+}
+.ce-settings__button:not(:nth-child(3n+3)) {
+  margin-right: 3px;
+}
+.ce-settings__button:nth-child(n+4) {
+  margin-top: 3px;
+}
+.ce-settings__button--disabled {
+  cursor: not-allowed !important;
+  opacity: 0.3;
+}
+.ce-settings__button--selected {
+  color: var(--color-active-icon);
+}
+
+@media (--not-mobile) {
+  .codex-editor--narrow .ce-settings .ce-popover {
+    right: 0;
+    left: unset;
+  }
+}
+
+/*# sourceMappingURL=settings.css.map */

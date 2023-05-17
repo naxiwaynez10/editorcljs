@@ -1,0 +1,127 @@
+.ce-inline-toolbar {
+  --y-offset: 8px;
+  position: absolute;
+  background-color: transparent;
+  padding: 6px 1px;
+  cursor: pointer;
+  border: 0;
+  outline: none;
+  -webkit-box-shadow: 0 3px 15px -3px rgba(13, 20, 33, 0.13);
+  box-shadow: 0 3px 15px -3px rgba(13, 20, 33, 0.13);
+  border-radius: 6px;
+  z-index: 20;
+  color: inherit;
+  margin: 0;
+  @apply --overlay-pane;
+  transform: translateX(-50%) translateY(8px) scale(0.94);
+  opacity: 0;
+  visibility: hidden;
+  transition: transform 150ms ease, opacity 250ms ease;
+  will-change: transform, opacity;
+  top: 0;
+  left: 0;
+  z-index: 3;
+}
+.ce-inline-toolbar--showed {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%);
+}
+.ce-inline-toolbar--left-oriented {
+  transform: translateX(-23px) translateY(8px) scale(0.94);
+}
+.ce-inline-toolbar--left-oriented, .ce-inline-toolbar--showed {
+  transform: translateX(-23px);
+}
+.ce-inline-toolbar--right-oriented {
+  transform: translateX(-100%) translateY(8px) scale(0.94);
+  margin-left: 23px;
+}
+.ce-inline-toolbar--right-oriented, .ce-inline-toolbar--showed {
+  transform: translateX(-100%);
+}
+.ce-inline-toolbar [hidden] {
+  display: none !important;
+}
+.ce-inline-toolbar__toggler-and-button-wrapper {
+  display: flex;
+  width: 100%;
+  padding: 0 6px;
+}
+.ce-inline-toolbar__buttons {
+  display: flex;
+}
+.ce-inline-toolbar__dropdown {
+  display: flex;
+  padding: 6px;
+  margin: 0 6px 0 -6px;
+  align-items: center;
+  cursor: pointer;
+  border-right: 1px solid var(--color-gray-border);
+  box-sizing: border-box;
+}
+@media (--can-hover) {
+  .ce-inline-toolbar__dropdown:hover {
+    background: var(--bg-light);
+  }
+}
+.ce-inline-toolbar__dropdown--hidden {
+  display: none;
+}
+.ce-inline-toolbar__dropdown-content, .ce-inline-toolbar__dropdown-arrow {
+  display: flex;
+}
+.ce-inline-toolbar__dropdown-content svg, .ce-inline-toolbar__dropdown-arrow svg {
+  width: var(--icon-size);
+  height: var(--icon-size);
+}
+.ce-inline-toolbar__shortcut {
+  opacity: 0.6;
+  word-spacing: -3px;
+  margin-top: 3px;
+}
+
+.ce-inline-tool {
+  @apply --toolbar-button;
+  border-radius: 0;
+  line-height: normal;
+}
+.ce-inline-tool--link .icon--unlink {
+  display: none;
+}
+.ce-inline-tool--unlink .icon--link {
+  display: none;
+}
+.ce-inline-tool--unlink .icon--unlink {
+  display: inline-block;
+  margin-bottom: -1px;
+}
+.ce-inline-tool-input {
+  outline: none;
+  border: 0;
+  border-radius: 0 0 4px 4px;
+  margin: 0;
+  font-size: 13px;
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  display: none;
+  font-weight: 500;
+  border-top: 1px solid rgba(201, 201, 204, 0.48);
+  -webkit-appearance: none;
+  font-family: inherit;
+}
+@media (--mobile) {
+  .ce-inline-tool-input {
+    font-size: 15px;
+    font-weight: 500;
+  }
+}
+.ce-inline-tool-input::placeholder {
+  color: var(--grayText);
+}
+.ce-inline-tool-input--showed {
+  display: block;
+}
+
+/*# sourceMappingURL=inline-toolbar.css.map */
