@@ -5,7 +5,7 @@
     min-width: 100%; 
 }
 
-.ce-paragraph[data-placeholder]:empty::before{
+.ce-paragraph[data-placeholder]:empty:focus::before{
   content: attr(data-placeholder);
   color: #707684;
   font-weight: normal;
