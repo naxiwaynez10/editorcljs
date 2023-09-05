@@ -28,7 +28,12 @@
     * {
       box-sizing: border-box;
     }
-
+    ::-moz-selection { /* Code for Firefox */
+      background: rgb(212, 236, 255);
+    }   
+    ::selection {
+      background: rgb(212, 236, 255); 
+    }
     [contenteditable] {
       cursor: text;
       outline: none;
