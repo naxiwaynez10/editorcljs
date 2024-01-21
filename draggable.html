@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  .container {
+    display: flex;
+    align-items: center;
+    width: 600px;
+    height: 200px;
+  }
+
+  .draggable {
+    width: 50px;
+    height: 100%;
+    background-color: lightblue;
+    cursor: grab;
+  }
+
+  .resizable {
+    flex-grow: 1;
+    height: 100%;
+    background-color: lightgreen;
+    resize: horizontal;
+    overflow: hidden;
+  }
+</style>
+<title>Draggable Resizable Divs</title>
+</head>
+<body>
+
+<div class="container">
+  <div class="draggable"></div>
+  <div class="resizable"></div>
+  <div class="resizable"></div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  $(".draggable").on("mousedown", function (e) {
+    const startX = e.clientX;
+    const initialWidth = $(this).width();
+
+    $(document).on("mousemove", function (e) {
+      const offsetX = e.clientX - startX;
+      const newWidth = initialWidth + offsetX;
+
+      $(".draggable").width(newWidth);
+      $(".resizable").width($(".container").width() - newWidth);
+    });
+
+    $(document).on("mouseup", function () {
+      $(document).off("mousemove");
+      $(document).off("mouseup");
+    });
+  });
+</script>
+
+</body>
+</html>

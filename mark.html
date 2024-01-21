@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Markdown Conversion Example</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/highlight.js/8.4.0/styles/solarized_light.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/showdown@1.9.1/dist/showdown.min.js"></script>
+</head>
+<body>
+    <div id="markdown-content">
+        <!-- Your Markdown content goes here -->
+    </div>
+
+    <script>
+        // Initialize Showdown and Highlight.js
+        const converter = new showdown.Converter();
+        hljs.configure({
+            languageDetectRe: /\blanguage-([\w-]+)\b/i
+        })
+        hljs.highlightAll();
+
+        // Markdown content
+        const markdownContent = `
+            # Markdown Conversion Example
+
+            Here is a simple code in JavaScript that prompts the user to enter their name and then displays a greeting message:
+
+            \`\`\`
+            // Prompt the user to enter their name
+            let name = prompt('Enter your name:');
+
+            // Display a greeting message
+            console.log('Hello ' + name + ', welcome!');
+            \`\`\`
+
+            This code uses the \`prompt\` function to ask the user for their name, and then uses \`console.log\` to display the greeting message on the console.
+        `;
+
+        // Convert Markdown to HTML and insert it into the container
+        const markdownContainer = document.getElementById('markdown-content');
+        markdownContainer.innerHTML = converter.makeHtml(markdownContent);
+        // hljs.highlightAll();
+    </script>
+</body>
+</html>
