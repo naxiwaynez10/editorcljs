@@ -1629,6 +1629,10 @@
   background: var(--color-background-icon-active);
   color: var(--color-text-icon-active);
 }
+
+.ce-popover-item--active:focus {
+  outline: none;
+}
 .ce-popover-item--active .ce-popover-item__icon {
   -webkit-box-shadow: none;
   box-shadow: none;

@@ -1,18 +1,20 @@
-blockquote {
-    border-left: 5px solid #a69c9c;
+.blockquote {
+    display: block;
+    border-left: 4px solid #a69c9c;
     background: ghostwhite;
-    padding: 10px;
-    min-height: 50px;
+    padding: 8px;
+    margin: 5px 0;
+    min-height: 20px;
     display: flex;
     flex-direction: column-reverse;
 }
 
-blockquote pre {
+/* blockquote pre {
     color: #a69c9c;
     margin: 3px 0;
-}
+} */
 
-blockquote > div[data-placeholder]:empty::before {
+div.blockquote[data-placeholder]:empty::before {
     content: attr(data-placeholder);
 }
 
