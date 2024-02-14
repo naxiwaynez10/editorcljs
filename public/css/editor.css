@@ -1563,8 +1563,8 @@
 }
 
 .sm .ce-popover-item__icon {
-  width: 26px;
-  height: 26px;
+  width: 20px;
+  height: 20px;
 }
 
 .bg .ce-popover-item__icon {
@@ -1572,8 +1572,8 @@
   height: 46px;
 }
 .sm .ce-popover-item__icon svg {
-  width: 26px;
-  height: 26px;
+  width: 20px;
+  height: 20px;
 }
 
 .bg .ce-popover-item__icon svg {

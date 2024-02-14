@@ -53,8 +53,8 @@
     height:20px;
     box-sizing:border-box;
     margin-left:0;
-    /* border-radius:5px; */
-    border:1px solid #C9C9C9;
+    border-radius: 3px;
+    border: 1px solid #333537;
     background:#fff
   }
   .cdx-checklist__item-checkbox-check:before {
@@ -65,7 +65,7 @@
     bottom:0;
     left:0;
     border-radius:100%;
-    background-color:#369fff;
+    background-color: #333537;
     visibility:hidden;
     pointer-events:none;
     transform:scale(1);
@@ -73,13 +73,15 @@
   }
   @media (hover: hover) {
     .cdx-checklist__item--checked .cdx-checklist__item-checkbox:not(.cdx-checklist__item--checked .cdx-checklist__item-checkbox--no-hover):hover .cdx-checklist__item-checkbox-check {
-      background:#0059AB;
-      border-color:#0059ab
+      background:#333537;
+      border-color:#333537;
+      border-radius: 3px;
     }
   }
   .cdx-checklist__item--checked .cdx-checklist__item-checkbox-check {
-    background:#369FFF;
-    border-color:#369fff
+    background:#333537;
+    border-color:#333537;
+    border-radius: 3px;
   }
   .cdx-checklist__item--checked .cdx-checklist__item-checkbox-check svg {
     opacity:1
