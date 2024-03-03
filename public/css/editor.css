@@ -847,8 +847,8 @@
   }
 }
 .ce-block {
-  -webkit-animation: fade-in 0.3s ease;
-  animation: fade-in 0.3s ease;
+  /* -webkit-animation: fade-in 0.3s ease; */
+  /* animation: fade-in 0.3s ease; */
   -webkit-animation-fill-mode: none;
   animation-fill-mode: none;
   -webkit-animation-fill-mode: initial;
