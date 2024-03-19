@@ -20,6 +20,7 @@ profiles.clj
 /uploads
 mark.html
 _index.html
-
+api.php
+.htaccess
 
 
