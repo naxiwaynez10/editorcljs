@@ -23,8 +23,9 @@
 }
 *[contenteditable]:empty:focus::before{
   content: attr(data-placeholder);
-  color: #707684;
-  font-weight: normal;
+  color: #878a9187; 
+   /* #707684; */
+  /* font-weight: normal; */
   opacity: 1;
 }
 
