@@ -6,7 +6,8 @@
 }
 .cdx-simple-image img {
   max-width:100%;
-  vertical-align:bottom
+  vertical-align: bottom;
+  object-fit: contain
 }
 .cdx-simple-image__caption[contentEditable=true][data-placeholder]:empty:before {
   position:absolute;
@@ -45,4 +46,15 @@ figure {
 .cdx-simple-image .hidden {
   visibility: hidden;
   width: 0;
+}
+
+
+a.ce-popover-item__title {
+  color: black;
+  width: 33%;
+  padding-left: 15px;
+  margin: 0 0 -4px -3px;
+}
+a.ce-popover-item__title.active {
+  border-bottom: 2px solid #d9d8d8;
 }
