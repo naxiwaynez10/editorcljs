@@ -16,6 +16,13 @@
   --color-line-gray: #eff0f1;
 }
 
+.unselectable {
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
 [contenteditable=true] {
   display: inline-block;
   width: 100%;
@@ -29,6 +36,9 @@
   opacity: 1;
 }
 
+.handle:first-child {display: none}
+.handle span {height: 0;}
+.handle span.show {height: 100%;}
 .mention {
   font-weight: bolder;
   color: #388ae5;
@@ -212,10 +222,11 @@
   flex: 1 1 auto;
   padding-top: 12px;
   padding-bottom: 12px;
-  transition-property: width;
+  /* transition-property: width;
   transition-duration: 270ms;
-  transition-timing-function: ease;
+  transition-timing-function: ease; */
   cursor: text;
+  /* margin-left: 12px; */
 }
 
 .barren .ce-block__content--vertical {
