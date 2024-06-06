@@ -226,7 +226,7 @@
   transition-duration: 270ms;
   transition-timing-function: ease; */
   cursor: text;
-  /* margin-left: 12px; */
+  margin: 0 12px;
 }
 
 .barren .ce-block__content--vertical {
